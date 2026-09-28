@@ -3,30 +3,30 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tu Próximo Perfume | E-commerce premium</title>
-  <meta name="description" content="Catálogo premium de perfumes con carrito, filtros, búsqueda y checkout." />
+  <title>Tu Próximo Perfume | Catálogo premium</title>
+  <meta name="description" content="Catálogo premium de perfumes con carrito, detalle de producto y checkout." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
   <style>
     :root {
-      --bg: #f7f2ed;
-      --bg-soft: #f0e7de;
+      --bg: #f7f2eb;
+      --bg-soft: #f2e9e1;
       --card: #fffdfb;
       --primary: #171312;
-      --primary-2: #2a2525;
-      --gold: #cda75a;
-      --gold-strong: #b98a28;
-      --gold-soft: rgba(205, 167, 90, 0.12);
+      --primary-2: #2f2928;
+      --gold: #caa55d;
+      --gold-strong: #b9862d;
+      --gold-soft: rgba(202, 165, 93, 0.14);
       --text: #221f1f;
       --muted: #665d5a;
-      --border: #e7ddd3;
-      --success: #2d7b5c;
-      --danger: #d85e5e;
-      --shadow: 0 25px 55px rgba(14, 12, 12, 0.10);
-      --shadow-soft: 0 12px 26px rgba(14, 12, 12, 0.06);
-      --radius: 20px;
+      --border: #e8dfd6;
+      --danger: #d86262;
+      --success: #2d7d5d;
+      --shadow: 0 26px 60px rgba(17, 14, 14, 0.08);
+      --shadow-soft: 0 12px 28px rgba(17, 14, 14, 0.05);
+      --radius: 22px;
     }
 
     * { box-sizing: border-box; }
@@ -42,12 +42,9 @@
     a { text-decoration: none; color: inherit; }
     img { display: block; max-width: 100%; }
     button, input, select { font: inherit; }
-    h1, h2, h3, h4 { margin: 0; font-family: 'Cormorant Garamond', serif; letter-spacing: 0.02em; }
+    h1, h2, h3, h4 { margin: 0; font-family: 'Cormorant Garamond', serif; letter-spacing: 0.03em; }
 
-    .container {
-      width: min(1200px, calc(100% - 30px));
-      margin: 0 auto;
-    }
+    .container { width: min(1200px, calc(100% - 30px)); margin: 0 auto; }
 
     .topbar {
       background: var(--primary);
@@ -64,9 +61,9 @@
       position: sticky;
       top: 0;
       z-index: 100;
+      background: rgba(255,253,251,0.92);
       backdrop-filter: blur(10px);
-      background: rgba(255, 253, 251, 0.9);
-      border-bottom: 1px solid rgba(23, 19, 18, 0.06);
+      border-bottom: 1px solid rgba(17,14,14,0.05);
     }
 
     .nav {
@@ -82,34 +79,26 @@
       align-items: center;
       gap: 10px;
       color: var(--primary);
-      text-transform: uppercase;
       letter-spacing: 0.08em;
+      text-transform: uppercase;
       font-weight: 800;
-      font-size: 0.93rem;
+      font-size: 0.94rem;
     }
 
-    .brand i {
-      color: var(--gold);
-      font-size: 1.4rem;
-    }
-
+    .brand i { color: var(--gold); font-size: 1.4rem; }
     .brand span { color: var(--gold); }
 
-    nav {
-      flex: 1;
-      display: flex;
-      justify-content: center;
-    }
+    nav { flex: 1; display: flex; justify-content: center; }
 
     .nav-links {
       list-style: none;
-      display: flex;
-      align-items: center;
-      gap: 25px;
       margin: 0;
       padding: 0;
-      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 24px;
       color: var(--primary);
+      font-weight: 600;
     }
 
     .nav-links a {
@@ -129,10 +118,7 @@
     }
 
     .nav-links a:hover,
-    .nav-links a.active {
-      color: var(--gold-strong);
-    }
-
+    .nav-links a.active { color: var(--gold-strong); }
     .nav-links a:hover::after,
     .nav-links a.active::after { width: 100%; }
 
@@ -149,8 +135,8 @@
       background: white;
       border: 1px solid var(--border);
       border-radius: 999px;
-      padding: 10px 14px;
       min-width: 220px;
+      padding: 10px 14px;
       box-shadow: var(--shadow-soft);
     }
 
@@ -158,8 +144,8 @@
     .search input {
       border: none;
       background: transparent;
-      outline: none;
       width: 100%;
+      outline: none;
       color: var(--text);
     }
 
@@ -168,14 +154,14 @@
       width: 46px;
       height: 46px;
       border-radius: 50%;
-      border: 1px solid var(--border);
       background: white;
+      border: 1px solid var(--border);
       color: var(--primary);
+      box-shadow: var(--shadow-soft);
       display: inline-flex;
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      box-shadow: var(--shadow-soft);
       transition: transform 0.2s ease;
     }
 
@@ -184,9 +170,8 @@
     .cart-count {
       position: absolute;
       top: -5px;
-      right: -4px;
+      right: -3px;
       background: var(--gold);
-      color: white;
       min-width: 20px;
       height: 20px;
       padding: 0 5px;
@@ -196,6 +181,7 @@
       justify-content: center;
       font-size: 0.7rem;
       font-weight: 800;
+      color: white;
     }
 
     .hero {
@@ -204,7 +190,7 @@
       display: flex;
       align-items: center;
       background:
-        linear-gradient(rgba(17, 14, 14, 0.57), rgba(17, 14, 14, 0.55)),
+        linear-gradient(rgba(17,14,14,0.56), rgba(17,14,14,0.55)),
         url('https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&q=80&w=1800') center/cover no-repeat;
       color: white;
       overflow: hidden;
@@ -214,7 +200,7 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: radial-gradient(circle at top right, rgba(205, 167, 90, 0.18), transparent 35%);
+      background: radial-gradient(circle at top right, rgba(202, 165, 93, 0.18), transparent 35%);
     }
 
     .hero-inner {
@@ -236,8 +222,8 @@
       font-size: 0.75rem;
       letter-spacing: 0.22em;
       text-transform: uppercase;
-      color: rgba(255,255,255,0.8);
       font-weight: 700;
+      color: rgba(255,255,255,0.8);
     }
 
     .eyebrow .dot {
@@ -245,30 +231,26 @@
       height: 8px;
       border-radius: 50%;
       background: var(--gold);
-      box-shadow: 0 0 14px rgba(205, 167, 90, 0.7);
+      box-shadow: 0 0 14px rgba(202,165,93,0.7);
     }
 
     .hero h1 {
-      font-size: clamp(3rem, 5vw, 5.2rem);
+      font-size: clamp(3rem, 5vw, 5.3rem);
       line-height: 0.95;
-      font-weight: 600;
-      margin-bottom: 16px;
       color: white;
+      margin-bottom: 16px;
+      font-weight: 600;
     }
 
     .hero p {
+      max-width: 650px;
       margin: 0 0 28px;
-      max-width: 640px;
+      color: rgba(255,255,255,0.83);
       font-size: 1.08rem;
-      color: rgba(255,255,255,0.82);
       font-family: 'Inter', sans-serif;
     }
 
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 16px;
-    }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 16px; }
 
     .btn {
       display: inline-flex;
@@ -279,9 +261,9 @@
       border-radius: 999px;
       border: 1px solid transparent;
       cursor: pointer;
+      font-size: 0.78rem;
       text-transform: uppercase;
       letter-spacing: 0.12em;
-      font-size: 0.78rem;
       font-weight: 800;
       transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
@@ -291,32 +273,32 @@
     .btn-primary {
       background: var(--gold);
       color: white;
-      box-shadow: 0 20px 30px rgba(205, 167, 90, 0.28);
+      box-shadow: 0 18px 32px rgba(202,165,93,0.3);
     }
 
     .btn-secondary {
       background: rgba(255,255,255,0.06);
-      color: white;
       border-color: rgba(255,255,255,0.18);
+      color: white;
     }
 
     .hero-card {
-      width: min(420px, 100%);
-      justify-self: end;
       background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.14);
+      border: 1px solid rgba(255,255,255,0.12);
       backdrop-filter: blur(10px);
       border-radius: 28px;
       padding: 22px;
-      box-shadow: 0 26px 60px rgba(0,0,0,0.15);
+      box-shadow: 0 26px 60px rgba(0,0,0,0.18);
+      justify-self: end;
+      width: min(430px, 100%);
     }
 
     .hero-card-header {
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      gap: 14px;
-      margin-bottom: 20px;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 18px;
       color: rgba(255,255,255,0.8);
       font-size: 0.72rem;
       letter-spacing: 0.15em;
@@ -325,12 +307,12 @@
     }
 
     .mini-badge {
-      border: 1px solid rgba(205, 167, 90, 0.5);
-      background: rgba(205, 167, 90, 0.15);
+      border: 1px solid rgba(202,165,93,0.55);
+      background: rgba(202,165,93,0.15);
       color: white;
       border-radius: 999px;
       padding: 8px 12px;
-      font-size: 0.7rem;
+      font-size: 0.68rem;
       letter-spacing: 0.08em;
       text-transform: uppercase;
     }
@@ -354,18 +336,13 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 16px;
+      gap: 18px;
     }
 
-    .featured-meta h3 {
-      font-size: 2rem;
-      color: white;
-      line-height: 1;
-    }
-
+    .featured-meta h3 { font-size: 2.1rem; color: white; line-height: 1; }
     .featured-price {
-      font-size: 1.35rem;
       color: var(--gold);
+      font-size: 1.3rem;
       font-weight: 800;
       font-family: 'Inter', sans-serif;
     }
@@ -404,19 +381,19 @@
     .feature-box i {
       width: 46px;
       height: 46px;
+      border-radius: 50%;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      border-radius: 50%;
       background: var(--gold-soft);
       color: var(--gold-strong);
       font-size: 1.1rem;
     }
 
     .feature-box h4 {
+      margin-bottom: 4px;
       font-size: 1.18rem;
       color: var(--primary);
-      margin-bottom: 4px;
     }
 
     .feature-box p {
@@ -426,15 +403,13 @@
       font-family: 'Inter', sans-serif;
     }
 
-    main {
-      padding: 80px 0 30px;
-    }
+    main { padding: 80px 0 30px; }
 
     .section-head {
       display: flex;
       align-items: end;
       justify-content: space-between;
-      gap: 20px;
+      gap: 22px;
       margin-bottom: 28px;
     }
 
@@ -466,17 +441,17 @@
       padding: 20px;
       overflow: hidden;
       border-radius: 24px;
-      color: white;
       background-size: cover;
       background-position: center;
       box-shadow: var(--shadow-soft);
+      color: white;
     }
 
     .category-card::before {
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(180deg, rgba(17,14,14,0.1), rgba(17,14,14,0.74));
+      background: linear-gradient(180deg, rgba(17,14,14,0.1), rgba(17,14,14,0.78));
     }
 
     .category-card > * {
@@ -488,12 +463,12 @@
       font-size: 2.3rem;
       line-height: 1;
       color: white;
-      margin-bottom: 6px;
+      margin-bottom: 5px;
     }
 
     .category-card p {
       margin: 0;
-      color: rgba(255,255,255,0.84);
+      color: rgba(255,255,255,0.85);
       font-size: 0.9rem;
       font-family: 'Inter', sans-serif;
     }
@@ -503,13 +478,13 @@
       justify-content: center;
       flex-wrap: wrap;
       gap: 12px;
-      margin: 24px auto 28px;
+      margin: 24px auto 26px;
     }
 
     .filter-btn {
-      border: 1px solid var(--border);
       background: white;
       color: var(--text);
+      border: 1px solid var(--border);
       padding: 10px 20px;
       border-radius: 999px;
       cursor: pointer;
@@ -517,19 +492,19 @@
       transition: all 0.2s ease;
     }
 
-    .filter-btn.active,
-    .filter-btn:hover {
+    .filter-btn:hover,
+    .filter-btn.active {
       background: var(--primary);
-      color: white;
       border-color: var(--primary);
+      color: white;
     }
 
     .toolbar-row {
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      gap: 18px;
+      align-items: center;
       flex-wrap: wrap;
+      gap: 18px;
       margin-bottom: 24px;
     }
 
@@ -539,18 +514,18 @@
       gap: 10px;
       background: white;
       border: 1px solid var(--border);
-      padding: 10px 14px;
       border-radius: 12px;
+      padding: 10px 14px;
       color: var(--muted);
-      font-family: 'Inter', sans-serif;
       font-size: 0.9rem;
+      font-family: 'Inter', sans-serif;
     }
 
     .sort-box select {
-      border: none;
       background: transparent;
-      color: var(--text);
+      border: none;
       outline: none;
+      color: var(--text);
       font-weight: 600;
     }
 
@@ -578,7 +553,7 @@
     .product-image {
       position: relative;
       height: 300px;
-      background: #f5efe9;
+      background: #f5efe8;
       overflow: hidden;
     }
 
@@ -629,7 +604,7 @@
     }
 
     .product-notes {
-      min-height: 70px;
+      min-height: 74px;
       font-size: 0.9rem;
       color: var(--muted);
       font-family: 'Inter', sans-serif;
@@ -643,12 +618,12 @@
       justify-content: space-between;
       gap: 16px;
       padding-top: 14px;
-      border-top: 1px solid rgba(23, 19, 18, 0.06);
+      border-top: 1px solid rgba(17,14,14,0.06);
     }
 
     .product-price {
       font-family: 'Inter', sans-serif;
-      font-size: 1.4rem;
+      font-size: 1.35rem;
       font-weight: 800;
       color: var(--primary);
     }
@@ -656,8 +631,8 @@
     .add-btn {
       width: 46px;
       height: 46px;
-      border-radius: 50%;
       border: none;
+      border-radius: 50%;
       background: var(--primary);
       color: white;
       cursor: pointer;
@@ -671,9 +646,9 @@
 
     .empty-state {
       display: none;
-      margin-top: 18px;
-      padding: 36px 20px;
       text-align: center;
+      padding: 36px 20px;
+      margin-top: 20px;
       border: 1px dashed var(--border);
       border-radius: 18px;
       background: rgba(255,255,255,0.5);
@@ -682,7 +657,7 @@
     }
 
     .testimonials {
-      margin-top: 92px;
+      margin-top: 90px;
     }
 
     .testimonial-grid {
@@ -695,7 +670,7 @@
     .testimonial-card {
       background: white;
       border: 1px solid var(--border);
-      border-radius: 22px;
+      border-radius: 20px;
       padding: 22px;
       box-shadow: var(--shadow-soft);
     }
@@ -704,7 +679,7 @@
       color: var(--gold);
       letter-spacing: 0.12em;
       margin-bottom: 12px;
-      font-size: 0.95rem;
+      font-size: 0.9rem;
     }
 
     .testimonial-card p {
@@ -723,18 +698,17 @@
       width: 42px;
       height: 42px;
       border-radius: 50%;
-      background: linear-gradient(135deg, var(--gold), #e8d8ab);
+      background: linear-gradient(135deg, var(--gold), #e7d4a9);
+      color: white;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      color: white;
       font-weight: 800;
     }
 
     .person strong {
       display: block;
       font-size: 0.95rem;
-      margin-bottom: 0;
     }
 
     .person span {
@@ -745,22 +719,22 @@
 
     .cta-banner {
       margin-top: 72px;
-      background: linear-gradient(135deg, #1b1a1a 0%, #2c2525 100%);
-      border-radius: 26px;
+      background: linear-gradient(135deg, #1c1818 0%, #2c2525 100%);
       color: white;
+      border-radius: 26px;
       padding: 34px 30px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 20px;
+      gap: 18px;
       box-shadow: var(--shadow);
     }
 
     .cta-banner h3 {
       font-size: clamp(2rem, 3vw, 2.9rem);
-      line-height: 1;
       color: white;
-      margin-bottom: 10px;
+      line-height: 1;
+      margin-bottom: 8px;
     }
 
     .cta-banner p {
@@ -772,8 +746,8 @@
     footer {
       background: #130f0f;
       color: white;
-      padding: 58px 0 22px;
-      margin-top: 80px;
+      padding: 56px 0 22px;
+      margin-top: 82px;
     }
 
     .footer-inner {
@@ -799,8 +773,8 @@
 
     .footer-col h4 {
       color: var(--gold);
-      margin-bottom: 14px;
       font-size: 1.5rem;
+      margin-bottom: 14px;
     }
 
     .footer-col ul {
@@ -815,7 +789,7 @@
       border-top: 1px solid rgba(255,255,255,0.08);
       padding-top: 18px;
       text-align: center;
-      color: rgba(255,255,255,0.6);
+      color: rgba(255,255,255,0.58);
       font-size: 0.8rem;
       font-family: 'Inter', sans-serif;
     }
@@ -844,15 +818,15 @@
       width: min(760px, 100%);
       display: grid;
       grid-template-columns: 1fr 1fr;
-      overflow: hidden;
       background: white;
+      overflow: hidden;
       border-radius: 28px;
-      box-shadow: 0 30px 80px rgba(0,0,0,0.2);
+      box-shadow: 0 34px 80px rgba(0,0,0,0.22);
     }
 
     .modal-image {
       min-height: 420px;
-      background: #f7efe9;
+      background: #f8efe9;
       overflow: hidden;
     }
 
@@ -925,7 +899,7 @@
       position: fixed;
       right: 22px;
       bottom: 22px;
-      background: rgba(23, 19, 18, 0.96);
+      background: rgba(23,19,18,0.96);
       color: white;
       border-radius: 12px;
       padding: 12px 16px;
@@ -935,8 +909,8 @@
       transition: opacity 0.25s ease, transform 0.25s ease;
       pointer-events: none;
       z-index: 200;
-      font-family: 'Inter', sans-serif;
       font-size: 0.88rem;
+      font-family: 'Inter', sans-serif;
     }
 
     .toast.show {
@@ -971,16 +945,16 @@
 
     .cart-header h3 {
       font-size: 2.1rem;
-      color: white;
       line-height: 1;
+      color: white;
     }
 
     .close-cart {
       background: transparent;
-      color: white;
       border: none;
-      font-size: 1.4rem;
+      color: white;
       cursor: pointer;
+      font-size: 1.4rem;
     }
 
     .cart-body {
@@ -992,10 +966,10 @@
 
     .cart-item {
       display: flex;
-      gap: 12px;
       align-items: center;
-      border-bottom: 1px solid rgba(23,19,18,0.06);
+      gap: 12px;
       padding: 12px 0;
+      border-bottom: 1px solid rgba(17,14,14,0.06);
     }
 
     .cart-item img {
@@ -1026,8 +1000,8 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      color: var(--muted);
       margin-top: 8px;
+      color: var(--muted);
       font-size: 0.8rem;
     }
 
@@ -1049,15 +1023,15 @@
     }
 
     .cart-empty {
+      padding-top: 40px;
+      font-family: 'Inter', sans-serif;
       text-align: center;
       color: var(--muted);
-      padding-top: 38px;
-      font-family: 'Inter', sans-serif;
     }
 
     .cart-footer {
+      border-top: 1px solid rgba(17,14,14,0.08);
       background: white;
-      border-top: 1px solid rgba(23,19,18,0.08);
       padding: 18px;
     }
 
@@ -1065,17 +1039,17 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      margin-bottom: 14px;
       font-weight: 800;
       color: var(--primary);
-      margin-bottom: 14px;
       font-size: 1.1rem;
     }
 
     .checkout-btn {
       width: 100%;
-      padding: 14px 18px;
       border: none;
       border-radius: 14px;
+      padding: 14px 18px;
       background: var(--gold);
       color: white;
       cursor: pointer;
@@ -1088,69 +1062,27 @@
       position: fixed;
       inset: 0;
       background: rgba(0,0,0,0.46);
-      display: none;
       z-index: 99;
+      display: none;
     }
 
     .overlay.open { display: block; }
 
     @media (max-width: 980px) {
-      .hero-inner, .modal-content, .footer-inner {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-card {
-        justify-self: start;
-      }
-
-      .features-grid,
-      .testimonial-grid,
-      .category-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
+      .hero-inner, .modal-content, .footer-inner { grid-template-columns: 1fr; }
+      .hero-card { justify-self: start; }
+      .features-grid, .category-grid, .testimonial-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     }
 
     @media (max-width: 740px) {
-      .nav {
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-
-      nav {
-        width: 100%;
-      }
-
-      .nav-links {
-        flex-wrap: wrap;
-        gap: 10px 16px;
-      }
-
-      .nav-actions {
-        width: 100%;
-        justify-content: space-between;
-      }
-
-      .search {
-        min-width: 0;
-        width: 100%;
-      }
-
-      .features-grid,
-      .testimonial-grid,
-      .category-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .section-head,
-      .toolbar-row,
-      .cta-banner {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .hero-actions .btn {
-        width: 100%;
-      }
+      .nav { flex-wrap: wrap; justify-content: center; }
+      nav { width: 100%; }
+      .nav-links { flex-wrap: wrap; gap: 10px 16px; }
+      .nav-actions { width: 100%; justify-content: space-between; }
+      .search { min-width: 0; width: 100%; }
+      .features-grid, .category-grid, .testimonial-grid { grid-template-columns: 1fr; }
+      .section-head, .toolbar-row, .cta-banner { flex-direction: column; align-items: flex-start; }
+      .hero-actions .btn { width: 100%; }
     }
   </style>
 </head>
@@ -1174,7 +1106,7 @@
       </nav>
 
       <div class="nav-actions">
-        <label class="search" aria-label="Buscar">
+        <label class="search" aria-label="Buscar perfume">
           <i class="fas fa-search"></i>
           <input id="searchInput" type="text" placeholder="Buscar perfume" />
         </label>
@@ -1191,7 +1123,7 @@
       <div>
         <div class="eyebrow"><span class="dot"></span> Fragancias premium</div>
         <h1>Descubre la esencia que te define</h1>
-        <p>Explora nuestra colección de perfumes premium para cada momento, estilo y personalidad. Firmeza, sofisticación y aroma inolvidable en cada botella.</p>
+        <p>Explora nuestra colección premium de perfumes y encuentra el aroma perfecto para cada momento, estilo y ocasión.</p>
         <div class="hero-actions">
           <a href="#catalogo" class="btn btn-primary">Ver catálogo</a>
           <a href="#colecciones" class="btn btn-secondary">Colecciones</a>
@@ -1209,7 +1141,7 @@
             <h3>Golden Muse</h3>
             <span class="featured-price">$160</span>
           </div>
-          <div class="featured-notes">Jazmín, mango y vainilla dorada para una presencia memorable.</div>
+          <div class="featured-notes">Jazmín, mango y vainilla dorada para una presencia inolvidable.</div>
         </div>
       </div>
     </div>
@@ -1285,7 +1217,7 @@
 
       <div class="toolbar-row">
         <div></div>
-        <label class="sort-box" aria-label="Ordenar producto">
+        <label class="sort-box" aria-label="Ordenar productos">
           <span>Ordenar por</span>
           <select id="sortSelect">
             <option value="featured">Destacados</option>
@@ -1379,7 +1311,6 @@
         </ul>
       </div>
     </div>
-
     <div class="container footer-bottom">© 2026 Tu Próximo Perfume. Todos los derechos reservados.</div>
   </footer>
 
@@ -1423,15 +1354,15 @@
 
   <script>
     const products = [
-      { id: 1, name: 'Elegance Noir', category: 'hombre', categoryText: 'Para Él', price: 120, badge: 'Más vendido', notes: 'Bergamota, pimienta negra y ámbar amaderado.', description: 'Una fragancia intensa y masculina con una base cálida de ámbar y maderas.', img: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&q=80&w=600' },
-      { id: 2, name: 'Velvet Rose', category: 'mujer', categoryText: 'Para Ella', price: 145, badge: 'Nuevo', notes: 'Rosa de Damasco, vainilla y almizcle blanco.', description: 'Sensual y sofisticada con un toque floral intenso y final suave y elegante.', img: 'https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&q=80&w=600' },
+      { id: 1, name: 'Elegance Noir', category: 'hombre', categoryText: 'Para Él', price: 120, badge: 'Más vendido', notes: 'Bergamota, pimienta negra y ámbar amaderado.', description: 'Una fragancia intensa y masculina con una base cálida de ámbar y madera.', img: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&q=80&w=600' },
+      { id: 2, name: 'Velvet Rose', category: 'mujer', categoryText: 'Para Ella', price: 145, badge: 'Nuevo', notes: 'Rosa de Damasco, vainilla y almizcle blanco.', description: 'Sensual y sofisticada con un toque floral intenso y final suave y adictivo.', img: 'https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&q=80&w=600' },
       { id: 3, name: 'Citrus Breeze', category: 'unisex', categoryText: 'Unisex', price: 98, badge: '', notes: 'Limón siciliano, flor de azahar y cedro fresco.', description: 'Frescura vibrante y ligera para el día a día con un aire moderno y limpio.', img: 'https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&q=80&w=600' },
       { id: 4, name: 'Midnight Oud', category: 'unisex', categoryText: 'Unisex / Nicho', price: 185, badge: 'Exclusivo', notes: 'Madera de oud, incienso, azafrán y cuero suave.', description: 'Una composición profunda y sofisticada con presencia nocturna y elegante.', img: 'https://images.unsplash.com/photo-1588405748880-12d1d2a59f75?auto=format&fit=crop&q=80&w=600' },
-      { id: 5, name: 'Golden Muse', category: 'mujer', categoryText: 'Para Ella', price: 160, badge: 'Colección', notes: 'Jazmín, mango y vainilla dorada.', description: 'Radiant, cálida y muy femenina con un resultado glorioso y elegante.', img: 'https://images.unsplash.com/photo-1528740561666-dc2479dc08ab?auto=format&fit=crop&q=80&w=600' },
+      { id: 5, name: 'Golden Muse', category: 'mujer', categoryText: 'Para Ella', price: 160, badge: 'Colección', notes: 'Jazmín, mango y vainilla dorada.', description: 'Radiant, cálida y muy femenina con un resultado glorioso y refinado.', img: 'https://images.unsplash.com/photo-1528740561666-dc2479dc08ab?auto=format&fit=crop&q=80&w=600' },
       { id: 6, name: 'Urban Scent', category: 'hombre', categoryText: 'Para Él', price: 110, badge: 'Top seller', notes: 'Nuez moscada, naranja amarga y sándalo elegante.', description: 'Un aroma moderno y refinado con carácter masculino y equilibrio perfecto.', img: 'https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&q=80&w=600' },
-      { id: 7, name: 'Forest Bloom', category: 'unisex', categoryText: 'Unisex', price: 135, badge: 'Natural', notes: 'Loto, hojas verdes y musk blanco.', description: 'Aroma limpio y conectivo con un aire fresco urbanamente natural.', img: 'https://images.unsplash.com/photo-1563170351-be82bc888e1e?auto=format&fit=crop&q=80&w=600' },
+      { id: 7, name: 'Forest Bloom', category: 'unisex', categoryText: 'Unisex', price: 135, badge: 'Natural', notes: 'Loto, hojas verdes y musk blanco.', description: 'Aroma limpio y conectado con un aire fresco y muy contemporáneo.', img: 'https://images.unsplash.com/photo-1563170351-be82bc888e1e?auto=format&fit=crop&q=80&w=600' },
       { id: 8, name: 'Amber Luxe', category: 'mujer', categoryText: 'Para Ella', price: 175, badge: 'Premium', notes: 'Ámbar, flor de naranjo y vainilla cálida.', description: 'Una fragancia cálida y envolvente que deja una impresión inolvidable.', img: 'https://images.unsplash.com/photo-1611078489935-0cb964de46d6?auto=format&fit=crop&q=80&w=600' },
-      { id: 9, name: 'Noir Leather', category: 'hombre', categoryText: 'Para Él', price: 190, badge: 'Elite', notes: 'Cuero, tabaco y madera de cedro.', description: 'Fuerte, elegante y intenso para quienes buscan un perfume con carácter.', img: 'https://images.unsplash.com/photo-1523293182086-7651a899d37f?auto=format&fit=crop&q=80&w=600' },
+      { id: 9, name: 'Noir Leather', category: 'hombre', categoryText: 'Para Él', price: 190, badge: 'Elite', notes: 'Cuero, tabaco y madera de cedro.', description: 'Fuerte, elegante e intenso para quienes buscan un perfume con carácter.', img: 'https://images.unsplash.com/photo-1523293182086-7651a899d37f?auto=format&fit=crop&q=80&w=600' },
       { id: 10, name: 'Bloom Silk', category: 'mujer', categoryText: 'Para Ella', price: 150, badge: 'Favorito', notes: 'Peonía, rosa y musk cremoso.', description: 'Romántica y sofisticada, con un estilo delicado y memorable.', img: 'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&q=80&w=600' }
     ];
 
@@ -1440,9 +1371,7 @@
     let currentFilter = 'all';
     let currentSort = 'featured';
 
-    function saveCart() {
-      localStorage.setItem(cartKey, JSON.stringify(cart));
-    }
+    function saveCart() { localStorage.setItem(cartKey, JSON.stringify(cart)); }
 
     function showToast(message) {
       const toast = document.getElementById('toast');
@@ -1455,20 +1384,16 @@
     function sortProducts(items) {
       const list = [...items];
       switch (currentSort) {
-        case 'low':
-          return list.sort((a, b) => a.price - b.price);
-        case 'high':
-          return list.sort((a, b) => b.price - a.price);
-        case 'name':
-          return list.sort((a, b) => a.name.localeCompare(b.name));
-        default:
-          return list;
+        case 'low': return list.sort((a, b) => a.price - b.price);
+        case 'high': return list.sort((a, b) => b.price - a.price);
+        case 'name': return list.sort((a, b) => a.name.localeCompare(b.name));
+        default: return list;
       }
     }
 
     function getFilteredProducts() {
       const searchValue = document.getElementById('searchInput').value.trim().toLowerCase();
-      let filtered = products.filter(product => {
+      const filtered = products.filter(product => {
         const matchesCategory = currentFilter === 'all' || product.category === currentFilter;
         const matchesSearch = !searchValue || product.name.toLowerCase().includes(searchValue);
         return matchesCategory && matchesSearch;
@@ -1509,16 +1434,15 @@
       `).join('');
 
       document.querySelectorAll('.product-card').forEach(card => {
-        card.addEventListener('click', event => {
-          if (event.target.closest('.add-btn')) return;
-          const id = Number(card.dataset.id);
-          openProductModal(id);
+        card.addEventListener('click', e => {
+          if (e.target.closest('.add-btn')) return;
+          openProductModal(Number(card.dataset.id));
         });
       });
 
       document.querySelectorAll('.add-btn').forEach(button => {
-        button.addEventListener('click', event => {
-          event.stopPropagation();
+        button.addEventListener('click', e => {
+          e.stopPropagation();
           addToCart(Number(button.dataset.addId));
         });
       });
@@ -1548,11 +1472,8 @@
       if (!product) return;
 
       const existing = cart.find(item => item.id === productId);
-      if (existing) {
-        existing.quantity += 1;
-      } else {
-        cart.push({ ...product, quantity: 1 });
-      }
+      if (existing) existing.quantity += 1;
+      else cart.push({ ...product, quantity: 1 });
 
       saveCart();
       updateCart();
@@ -1583,6 +1504,7 @@
     function updateCart() {
       const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
       document.getElementById('cartCount').textContent = totalItems;
+
       const cartBody = document.getElementById('cartBody');
       const cartTotal = document.getElementById('cartTotal');
 
@@ -1655,8 +1577,8 @@
     document.getElementById('closeCart').addEventListener('click', closeCart);
     document.getElementById('overlay').addEventListener('click', closeCart);
     document.getElementById('closeModal').addEventListener('click', closeProductModal);
-    document.getElementById('productModal').addEventListener('click', event => {
-      if (event.target === event.currentTarget) closeProductModal();
+    document.getElementById('productModal').addEventListener('click', e => {
+      if (e.target === e.currentTarget) closeProductModal();
     });
     document.getElementById('modalAddBtn').addEventListener('click', () => {
       const id = Number(document.getElementById('modalAddBtn').dataset.productId);
